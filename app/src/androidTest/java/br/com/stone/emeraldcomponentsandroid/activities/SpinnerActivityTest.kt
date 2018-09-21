@@ -12,16 +12,15 @@ import android.support.test.espresso.matcher.ViewMatchers.withId
 import android.support.test.espresso.matcher.ViewMatchers.withSpinnerText
 import android.support.test.espresso.matcher.ViewMatchers.withText
 import android.support.test.rule.ActivityTestRule
-import android.support.test.runner.AndroidJUnit4
 import android.widget.EditText
 import br.com.stone.emeraldcomponentsandroid.R
+import com.facebook.testing.screenshot.Screenshot
 import org.hamcrest.Matchers.`is`
 import org.hamcrest.Matchers.instanceOf
 import org.hamcrest.Matchers.not
 import org.hamcrest.core.AllOf.allOf
 import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
 
 
 /**
@@ -29,10 +28,12 @@ import org.junit.runner.RunWith
  * Copyright (c) Stone Co. All rights reserved.
  * lucas.amaral@stone.com.br
  */
-@RunWith(AndroidJUnit4::class)
 class SpinnerActivityTest {
+
     @get:Rule
     val activityRule = ActivityTestRule(SpinnerActivity::class.java)
+
+    private val layout by lazy { activityRule.activity.window.decorView.rootView }
 
     @Test
     fun shouldAutoCompleteValidateTypedValue() {
@@ -44,10 +45,13 @@ class SpinnerActivityTest {
         autoCompleteView.perform(click())
         autoCompleteView.perform(replaceText("100"), closeSoftKeyboard())
 
+
         onView(withText(query)).inRoot(withDecorView(not(`is`(activityRule.activity.window.decorView))))
                 .perform(click())
 
         autoCompleteView.check(matches(withText(query)))
+
+        Screenshot.snapActivity(activityRule.activity).record()
     }
 
     @Test
@@ -58,5 +62,7 @@ class SpinnerActivityTest {
         val expectedOption = "Option 2"
         onData(allOf(`is`(instanceOf(String::class.java)), `is`(expectedOption))).perform(click())
         onView((withId(R.id.emeraldSpinner))).check(matches(withSpinnerText(expectedOption)))
+
+        Screenshot.snapActivity(activityRule.activity).record()
     }
 }
