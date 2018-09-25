@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.jaredsburrows.spoon'
 
 android {
     compileSdkVersion 27
@@ -15,11 +16,34 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+spoon {
+    debug = true
+
+    baseOutputDir = file("$projectDir/screenshots-spoon")
+
+    if (project.hasProperty("spoonClassName")) {
+        className = project.spoonClassName
+
+        if (project.hasProperty("spoonMethodName")) {
+            methodName = project.spoonMethodName
+        }
+    }
+
+    instrumentationArgs = ["foo:bar"]
+    adbTimeout = 30
+    codeCoverage = true
+    grantAllPermissions = true
 }
 
 dependencies {
@@ -31,6 +55,7 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$support_version"
     implementation "com.android.support:design:$support_version"
     implementation "com.android.support.constraint:constraint-layout:$contraint_layout_version"
+    implementation 'com.jraska:falcon:2.1.0'
 
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "com.android.support:support-annotations:$support_version"
@@ -38,4 +63,6 @@ dependencies {
     androidTestImplementation "com.android.support.test:runner:$support_test_runner_version"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_version"
     androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$espresso_version"
+    androidTestImplementation "com.squareup.spoon:spoon-client:2.0.0-SNAPSHOT"
+    androidTestImplementation 'com.jraska:falcon-spoon-compat:2.1.0'
 }
