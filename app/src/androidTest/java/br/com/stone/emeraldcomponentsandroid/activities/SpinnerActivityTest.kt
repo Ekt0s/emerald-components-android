@@ -33,25 +33,26 @@ class SpinnerActivityTest {
     @get:Rule
     val activityRule = ActivityTestRule(SpinnerActivity::class.java)
 
-    private val layout by lazy { activityRule.activity.window.decorView.rootView }
-
     @Test
     fun shouldAutoCompleteValidateTypedValue() {
         val autoCompleteView = onView(allOf(
                 ViewMatchers.isDescendantOfA(withId(R.id.emeraldAutoComplete)),
                 ViewMatchers.isAssignableFrom(EditText::class.java)))
 
+//        Screenshot.snapActivity(activityRule.activity).setName("before").record()
+
         val query = "100 - Aaaaaaaaa"
         autoCompleteView.perform(click())
         autoCompleteView.perform(replaceText("100"), closeSoftKeyboard())
 
+//        Screenshot.snapActivity(activityRule.activity).setName("after-type").record()
 
         onView(withText(query)).inRoot(withDecorView(not(`is`(activityRule.activity.window.decorView))))
                 .perform(click())
 
         autoCompleteView.check(matches(withText(query)))
 
-        Screenshot.snapActivity(activityRule.activity).record()
+        Screenshot.snapActivity(activityRule.activity).setName("asdf").record()
     }
 
     @Test
@@ -63,6 +64,6 @@ class SpinnerActivityTest {
         onData(allOf(`is`(instanceOf(String::class.java)), `is`(expectedOption))).perform(click())
         onView((withId(R.id.emeraldSpinner))).check(matches(withSpinnerText(expectedOption)))
 
-        Screenshot.snapActivity(activityRule.activity).record()
+//        Screenshot.snapActivity(activityRule.activity).setName("spinner").record()
     }
 }
