@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="br.com.stone.emeraldcomponentsandroid.test" tests="17" failures="0" errors="0" skipped="0" time="0.129" timestamp="2018-09-25T19:58:49" hostname="localhost">
+  <properties />
+  <testcase name="shouldEventListAndFirstItemBeDisplayed" classname="br.com.stone.emeraldcomponentsandroid.activities.CalendarActivityTest" time="2.988" />
+  <testcase name="shouldEventListScrollAndClickOnLastPosition" classname="br.com.stone.emeraldcomponentsandroid.activities.CalendarActivityTest" time="2.911" />
+  <testcase name="shouldSelectDateWhenClickOnDateTitleAndSelectDateFromDatePicker" classname="br.com.stone.emeraldcomponentsandroid.activities.DateActivityTest" time="4.693" />
+  <testcase name="shouldNavigateAmongMonthsAndChangeEmeraldTextDateTextValue" classname="br.com.stone.emeraldcomponentsandroid.activities.DateActivityTest" time="3.137" />
+  <testcase name="shouldOpenOptionsWheClickOnPersonalizedFilter" classname="br.com.stone.emeraldcomponentsandroid.activities.DateActivityTest" time="4.241" />
+  <testcase name="shouldChangeTitleAndDateTitleWhenSelectOnOptionFilterOnEmeraldDateFilter" classname="br.com.stone.emeraldcomponentsandroid.activities.DateActivityTest" time="18.69" />
+  <testcase name="shouldOpenDatePickerDialogWhenClickOnPersonalizedDateRange" classname="br.com.stone.emeraldcomponentsandroid.activities.DateActivityTest" time="8.48" />
+  <testcase name="shouldOpenDatePickerDialogWhenClickOnEmeraldTextDate" classname="br.com.stone.emeraldcomponentsandroid.activities.DateActivityTest" time="3.789" />
+  <testcase name="shouldPhoneEditBeAbleToValidateInvalidAndValidInput" classname="br.com.stone.emeraldcomponentsandroid.activities.InputActivityTest" time="5.245" />
+  <testcase name="shouldCellPhoneEditBeAbleToValidateInvalidAndValidInput" classname="br.com.stone.emeraldcomponentsandroid.activities.InputActivityTest" time="5.344" />
+  <testcase name="shouldCNPJEditBeAbleToValidateInvalidAndValidInput" classname="br.com.stone.emeraldcomponentsandroid.activities.InputActivityTest" time="6.247" />
+  <testcase name="shouldCurrencyEditBeAbleToValidateInvalidAndValidInput" classname="br.com.stone.emeraldcomponentsandroid.activities.InputActivityTest" time="13.773" />
+  <testcase name="shouldEmailEditBeAbleToValidateInvalidAndValidInput" classname="br.com.stone.emeraldcomponentsandroid.activities.InputActivityTest" time="6.046" />
+  <testcase name="shouldCepEditBeAbleToValidateInvalidAndValidInput" classname="br.com.stone.emeraldcomponentsandroid.activities.InputActivityTest" time="6.523" />
+  <testcase name="shouldCPFEditBeAbleToValidateInvalidAndValidInput" classname="br.com.stone.emeraldcomponentsandroid.activities.InputActivityTest" time="6.046" />
+  <testcase name="shouldAutoCompleteValidateTypedValue" classname="br.com.stone.emeraldcomponentsandroid.activities.SpinnerActivityTest" time="5.921" />
+  <testcase name="shouldSpinnerMatchTestWhenUserClickInOneOption" classname="br.com.stone.emeraldcomponentsandroid.activities.SpinnerActivityTest" time="4.567" />
+</testsuite>
