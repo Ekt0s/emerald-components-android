@@ -35,4 +35,24 @@
     <color name="emerald_date_filter_green">#95C93D</color>
 
     <color name="emerald_date_view_text">#2d3844</color>
+
+    <!--Bascis color -->
+    <public name="emerald_primary">#95C93D</public>
+    <public name="emerald_secondary">#8036DC</public>
+    <public name="emerald_sucess">#2ECC71</public>
+    <public name="emerald_error">#E74C3C</public>
+    <public name="emerald_attention">#F9BF09</public>
+
+    <public name="emerald_white_1">#FFFFFF</public>
+    <public name="emerald_white_2">#FAFAFC</public>
+    <public name="emerald_white_3">#EBEBF0</public>
+    <public name="emerald_white_4">#C3C8D2</public>
+    <public name="emerald_white_5">#96A0AF</public>
+
+    <public name="emerald_black_1">#0C1219</public>
+    <public name="emerald_black_2">#181C24</public>
+    <public name="emerald_black_3">#242932</public>
+    <public name="emerald_black_4">#2D3844</public>
+    <public name="emerald_black_5">#424B54</public>
+
 </resources>
